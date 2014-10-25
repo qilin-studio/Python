@@ -82,8 +82,11 @@ def req(table, stop, route, fo):
 	"""Retrieve rtpi data(xml/json) to local files."""
 
 	#Replace user and password with API key
+	user = "[user]"
+	password = "[password]"
+	
 	#default request
-	request = """http://[user]:[password]@
+	request = """http://"""+user+":"+password+"""@
 	www.dublinked.ie
 	/cgi-bin/rtpi/
 	realtimebusinformation?stopid=1&operator=bac
@@ -94,7 +97,7 @@ def req(table, stop, route, fo):
 		#timetable information
 		tturl = "/cgi-bin/rtpi/timetableinformation?"
 		host = "www.dublinked.ie"
-		header = "http://[user]:[password]@"
+		header = "http://"+user+":"+password+"@"
 		ttquery = urllib.urlencode({'type': 'day', 'stopid': stop, 'operator': 'bac', 'format': fo})
 		#request url
 		request = header + host + tturl + ttquery
@@ -104,7 +107,7 @@ def req(table, stop, route, fo):
 		#realtime bus information
 		rturl = "/cgi-bin/rtpi/realtimebusinformation?"
 		host = "www.dublinked.ie"
-		header = "http://[user]:[password]@"
+		header = "http://"+user+":"+password+"@"
 		rtquery = urllib.urlencode({'stopid': stop, 'routeid': route, 'operator': 'bac', 'format': fo})
 		#request url
 		request = header + host + rturl + rtquery
