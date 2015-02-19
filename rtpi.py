@@ -6,6 +6,7 @@ import json
 
 
 def ppdata(table, stop, route, fo):
+
     """Parse and print data from local files(xml/json)."""
 
     #retrieve rtpi data to local files
@@ -99,13 +100,6 @@ def req(table, stop, route, fo):
     #Replace user and password with API key
     user = "linqi"
     password = "1710qi2014"
-    
-    #default request
-    request = """http://"""+user+":"+password+"""@
-    www.dublinked.ie
-    /cgi-bin/rtpi/
-    realtimebusinformation?stopid=1&operator=bac
-    """
 
     if table == "t":
 
