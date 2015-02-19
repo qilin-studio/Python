@@ -98,8 +98,8 @@ def req(table, stop, route, fo):
     """Retrieve rtpi data(xml/json) to local files."""
 
     #Replace user and password with API key
-    user = "linqi"
-    password = "1710qi2014"
+    user = ""
+    password = ""
 
     if table == "t":
 
